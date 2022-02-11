@@ -1,0 +1,45 @@
+1) the code which we wrote in fs-module folder to read and writhe a file was cald a synchronous code. hear code will alwase execute line by line and the next line will only execute after the previous one finish executation for ex if we read file first then we log it to console that mins if the file takes 2 sec to reads then after 2 sec only the log line will execute and because of this it's also cald blocking code
+
+2) other languages like python, php all are multy threaded that mins on each and every request the server creates new thread to process the request so if user 1 request to read file which can take 5 sec and another user request the same time to login both request will be process in diffrent threads so the code is written in blocking mennar but because it will run in diffrent threads we will be able to process both requests in a same time so no one have to wait.
+
+3) because the way node is designed this way of executation will be very bad for purrofmance because the node is single theraded that mins unlike python and php the node will not create the diffrent threads for diffrent requests it will execute all the requests in the same thread. that mins if user 1 request to read file which can take 5 sec and another user request the same time to login both request will be process in same thread so untile the read file request not complete processing another user have to wait for 5 sec then it's request will be processed. so as you can see because the way node is designed if we use synchronous or blocking code then we have to deal with massive purrofmance hit. 
+ 
+4) to resolve this issues we have one solutation which is asynchronous or non-blocking code. in asynchronous code it's not alwase gurented that the code will run in same sequence in which it's written because in asynchronous code we wright code in a way that heavy tasks will run in background and mean wile the other code will be executed and when the heavy task will be complete we can run code which we want to run after the heavy task done. for example for the file read takes 2 sec and then we have log in console and we wright the readfile in asynchronous way the first pointer will come to readfile put it to run in background and continue executation further which is the console log and in future when readfile will be done it will execute the code define for it. so hear the code executation is not blocking so we cald it non-blocking code.
+
+5) this way of righting code will be a big purrofmance gain for applications which work on single thread because now when a user 1 will request for reading the file which will take 5 sec we can put that to execute in background so our main thread will be stay free to execute simple and synchronous tasks so at that same time if another user will request for login then the main thread can process the request at a same time and with this way we can achive very good pufformance for to many users and to many requests as a same time.
+
+6) so it's our job as a developer to wright the code which works on asynchronous way for heavy tasks for very good pufformance
+
+7) so how we will wright the asynchronous code? it's very simple we use callbacks for that. most of the functions in node js functions excepts callbacks for heavy processing so we can provide the callback function as on or the argument of the paramitter and then we can define what will be heppan after the heavy task will complete in callback so now it's the functions responsiblity to call the callback when it's complete the heavy taks from background.
+
+8) so that's why the node js is cald non-blocking I/O model because any executation is not blocked hear and the I/O stands for input output which is read or wright file get and send request and responses etx. that's why we can see lots and lots of callback in node js.
+
+9) but you have to keep in mind that just passing the function inside another function as callback not make them asynchronous by default. that mins if you create your own function which accepts callback the it will not run asynchronously in background by default. ther are only few methods in node modules which work asynchronously and accepts callback. for example in fs module insted of readFileSync if we use readFile what will accept callback and it will run in background asynchronously. so like this there are many module functions which work asynchronously.
+
+ex = 
+
+const fs = require('fs')
+
+fs.readFile('a.txt', 'utf-8', (err, data) => {
+    console.log(data)
+})
+
+- this will work asynchronous and run the callback after it's done
+
+
+10) but the problem with callback is as you know is callback hell which happens when we have to mutch of callback nestings for ex
+
+fs.readFile('a.txt', 'utf-8', (err, data) => {
+    console.log(data)
+    fs.readFile('b.txt', 'utf-8', (err, data) => {
+        console.log(data)
+        fs.readFile('c.txt', 'utf-8', (err, data) => {
+            console.log(data)
+        })
+    })
+})
+
+- hare as you can see it's very ugly and unreadable because of to mutch nestings so to avold this we can also use other node modules which are now avalable in new node versions which retturns promise so we can easily use then or async await to make them very easy to undeerstand and readbale.
+
+
+11) there is a whole section in section 5 to know how to wright asynchronous code in more modern and readbale ways with promise and async await but because node was actully designed to work with callbacks only in past to right asynchronous code so for now we will only use callback to right asynchronous code.

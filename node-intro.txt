@@ -1,0 +1,22 @@
+- let's first get basic understanding of what is node js wher it is used and how to use it
+
+- by officeal doc a node.js is javascript runtime built on google's v8 engine
+
+- now what is runtime and what is google's v8 engine let's understand it. so as you know all browsers understand html, css and js that means js can run inside any browser but who runs that js in browser is cald js engines every browser has thair own js engine to parse and execute js. 
+
+- before node there was no way to execute js outside of browser because no matchine understands js it has to parse in bineary which was possible by browser's js engines only so rayan dahl took chrome's v8 engine which used to parce the js and create node with it so now we has way to parse and execute js outside the browsers as well and that is node.js
+
+- this is just very high level overview of what a node is we will learn much deeper in future sections.
+
+- so now with node we are able to run js outside in browser as well that mins now we are able to do much more things like accessing file systems, better networking etc which was not possible inside the browser. and all this makes node js indeal for creating fast and scalabble backends 
+
+- a node js is single-threaded, event driven, non-blocking, i/o model base (we will learn all this in future)
+
+- but all this makes node ideal for building fast and scalable data intensive apps
+
+- the main good reasion for using node is to be able to use single language to build your entire stack and it has very big opensource community and packages 
+
+- all this makes node ideal for making api with big databases behind it (sql and nosql),
+data streaming, real time apps, server side apps etc 
+
+- but there is also some cases where we do not use node js which are heavy cpu-intensive tasks and heavy server side processing tasks like image and vedio processing etc (we will learn why and in which senarios) for that we can use python, rails, php etc.

@@ -1,0 +1,9 @@
+- repl is just a commandline where we can directly intrect with node in terminal
+
+- repl stands for read eveal print loop 
+
+- to start node repl we have to type node and press enter will start node repel where we will be able to run any js code 
+
+- when you press tab in node repl then it will show all the global variables which we can use in node we have all variables which we use in js like Math, Array, String, Date etc and we also have some node specific variables like http, fs etc 
+
+- all this global variables are notthing but just a node modules 

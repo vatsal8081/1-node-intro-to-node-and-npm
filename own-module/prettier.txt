@@ -1,0 +1,11 @@
+- prettier is one of the most usefull tool in js world the prettier is openieted code formator which formats our code in a way that it looks pretty and very easy to read and understand.
+
+- the prettier supports formating for js, ts, html, css, jsx, vue templates, json, graphQl and many more
+
+- in diffrent envermont we have to configour prettier diffrently to work but the easyest way is to first install prettier extension in the vs code. then we can change the diffrent settings of it in settings tab in vs code. but the easyest and cleanest way is to create .prettierrc file in root of a project then overide the default settings provided by prettier if you want to change anything if not then leave it the way it is.
+
+- keep in mind we don't need to define any settings in .prettierrc file because it's already there we create this file just to let others know that we use prettier and also to overide any default settings of prettier if we need.
+
+- the prettier will give intelicence for .prettierrc file as well
+
+- it is good to create .prettierrc file insted of changing the setting in vscode because by this when we share our code to other devs they can also use same rules in project so formating will stay consistant in all over the project. so always define setting by creating .prettierrc file only.

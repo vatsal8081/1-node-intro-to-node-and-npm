@@ -1,0 +1,61 @@
+- a npm is node package manages which is a officeal regristry for packages related to node.js
+
+- the npm was only design for managing only node related opensource packages only in past and so at that time the npm was only used to manage node related packages only
+
+- but now in a days we use the npm for all of our js stack that mins now you will find not only node related packages you will find a frontend, backend, mobile, desktop, core js, ai ml all kind of packages which use js in it. so now npm manages all third party packages in it's registry
+
+- a npm cli comes pre insted with node so when you install any version of node npm will we there with it.
+
+- now there is lot and lot of packages and usage in our app so it will be very hard to track all this packages it's versions, our app's details other implimantation of our app and etc. so to manage this we have package.json file in every kind of our project which will manage and track all of projects needs. 
+
+- when we create any kind project weather it's backend, frontend, desktop, mobile we will create package.json file in it with use of npm init command.
+
+
+- that mins node.js provides us a server where we can work, package.json helps to keep track of our project needs, in node_modules we will have all our third party packages and it's files.
+
+- if we see it this way then in backend and frontend this pattern is just same in frontend as well we use node server to develop project, we use thord party packeges from npm only we also have package.json there, we also have node_modules there.
+
+- that mins in frontend dev also we use node.js it's just in backend we don't create a build but in frontend we create build with webpack, bable etc so we can minified all this in one html, css and js files so browser can understand it.
+
+- so that mins weather we do import or require in frontend or backend for any node module the compiler will go to node_modules folder to find it weather it's any frontend or backend module.
+
+- so that mins when we create and frontend or backend project with any cli then they will create a new project with npm init then define package.json for us they install thair nessacery 3 party packages in project and they will be inside node_module and when we run any project they will have command which will initially run the file first they want to run for run the project.
+
+- so that mins when we do vue create vue cli is also doing the same things for us and they also run the project on node server only for development.
+
+- so if we use node for frontend also that nins we should be able to use nodes funcnality in frontend as well and answer is yes just try to use __dirname or process.env in frontend and you will be able to use them as well. 
+
+- but there is an exception hear we can only use some of the global objects provided by node only not other things like http, fs modules because it is avalable in node but don't furgot that at the end when we create a build we will run this code in browser only and as you know browser don't have any of this modules it's just node.js specific modules so only avalable when we run the code in node envermont.
+
+- and also the __dirname and process.env is only avalable in node but when we create buitd then also it will work because we also create the build using node and that time it will avalable and we just extract the values from there (current dir, process.env values) when we run as dev of create a build from those objects so anyway on build creation time node will extract those values and use taht data only so even after creating normal html, css and js files after creating build it works because those __dirname and process.env was replaced to string path or string env value which browser can understand but because http.createServer, fs.readFiles those functions not avalable in the browser envermont it will not work.
+
+- you can check all this by your own just use __dirname, and process.env in any vue project it will work in dev also and when you create build it will replace to string values in build files. but even when you use node as dev envermont at that time also you will not able to use http.createServer, fs.readFile etc which you should be able to use thericotaly in node envermont that's because a vue cli in it's core creates build for dev envermont as well so anyway you are running the minified version of app in dev envermont as well so it will not have this node modules.
+
+
+
+- as you know we have 2 type of dependencies in package.json normal devpendencies and dev devpendencies so no need to explain it.
+
+- we also have 2 type of npm package installs one is project specific and one is globale we only inatall the global package if it provides cli interface or it needs in almost all projects. otherwise we install in project specific.
+
+- a nodemon is one of the package which we can use globally and project wise as well but we will need to inform other devs that we use nodemon and also when they do npm i they well have nodemone for project directly we use it in project wise only 
+
+- and we install it by npm i nodemon --save-dev to install as dev dependenci and then we can create a script in package.json to use nodemone insted of simple node to get hot reload
+
+- it's installed in project's node_modules we can use nodemon <file_name> to start our project with hot reload
+
+- check package.json in own-module and run the dev script there to better understand
+
+
+- in npm most of the packages follows sementic versioning that mins they will have 3 numbers with dot to seprate. in those 3 numbers 1 one is for major 2 is for minor and 3 is for patch release.
+
+- if the maintanor of the package fix some bug in package when it will incress the patch number if the maintanor add new feactures or funcnality then it will chnage the minor number and if there is some big chnage in the package then major number will chnage in package version.
+
+- keep in mind that any patch or minor release of version is safer to update most of the time because they don't have any breacking chnages in it which can affect or break the code. but any major chnage can breack something in code so we avoid that in update most of the time.
+
+- that's why in any package number we have ^ symbol in front of the package number that mins if we update the packages npm is allowed to update to new patch or minor release of virsion if it is avalable but not to major one. 
+
+- ~ in virsion number that mins only accept patch release in updation time, ^ mins accept patch and minor releases, * accept patch, minor and major changes
+
+- we can get list of outdated packages in npm and yarn by command and they will show package current version and which virsion we can update base in package.josn file and what is the lattest virsion. then update command on npm and yarn we can update it.
+
+- we have package-lock.josn in our project as well which will have exzet number of virsion of our dependenci and dependenci of our dependenci and so on. and everytime when we install them we need exzet virsion of the dependenci package and also need to install exzet virsion of dependenci of dependenci packages as well so for that package-lock.josn is very import so we always should share package.json and package-lock.json to other developer or to repo.
