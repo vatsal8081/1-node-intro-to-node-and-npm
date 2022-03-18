@@ -8,7 +8,7 @@
 
 - this is just very high level overview of what a node is we will learn much deeper in future sections.
 
-- so now with node we are able to run js outside in browser as well that mins now we are able to do much more things like accessing file systems, better networking etc which was not possible inside the browser. and all this makes node js indeal for creating fast and scalabble backends 
+- so now with node we are able to run js outside in browser as well that mins now we are able to do much more things like accessing file systems, better networking etc which was not possible inside the browser. and all this makes node js ideal for creating fast and scalabble backends 
 
 - a node js is single-threaded, event driven, non-blocking, i/o model base (we will learn all this in future)
 

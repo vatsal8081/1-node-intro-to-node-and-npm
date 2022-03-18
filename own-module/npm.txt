@@ -4,7 +4,7 @@
 
 - but now in a days we use the npm for all of our js stack that mins now you will find not only node related packages you will find a frontend, backend, mobile, desktop, core js, ai ml all kind of packages which use js in it. so now npm manages all third party packages in it's registry
 
-- a npm cli comes pre insted with node so when you install any version of node npm will we there with it.
+- a npm cli comes pre insted with node so when you install any version of node npm will be there with it.
 
 - now there is lot and lot of packages and usage in our app so it will be very hard to track all this packages it's versions, our app's details other implimantation of our app and etc. so to manage this we have package.json file in every kind of our project which will manage and track all of projects needs. 
 

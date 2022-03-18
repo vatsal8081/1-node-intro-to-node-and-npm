@@ -16,7 +16,7 @@ console.log('3 party module use..', slugify('Vatsal Patel'));
 
 
 // 3 
-// we alwase should import our modules after the node modules and 3 part module  
+// we alwase should import our modules after the node modules and 3 party module  
 const logger = require('./logger')
 
 
